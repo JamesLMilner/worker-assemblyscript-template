@@ -1,6 +1,6 @@
 # worker-assemblyscript-template
 
-A batteries included template for kick starting a AssemblyScript Cloudflare worker project.
+A batteries included template for kick starting a AssemblyScript Cloudflare worker project. The template is based on the TypeScript template, so uses TypeScript for the handler.
 
 ## 🔋 Getting Started
 
@@ -9,12 +9,12 @@ This template is meant to be used with [`wrangler`](https://github.com/cloudflar
 To generate using `wrangler`, run this command:
 
 ```bash
-wrangler generate my-asc-project https://github.com/JamesMilnerUK/worker-assemblyscript-template
+wrangler generate my-asc-project https://github.com/JamesLMilner/worker-assemblyscript-template
 ```
 
 ### 👩 💻 Developing
 
-[`src/index.js`](https://github.com/JamesMilnerUK/worker-assemblyscript-template/blob/master/src/index.ts) calls the request handler in [`src/handler.ts`](https://github.com/JamesMilnerUK/worker-assemblyscript-template/blob/master/src/handler.ts), and will return the [request method](https://developer.mozilla.org/en-US/docs/Web/API/Request/method) for the given request.
+[`src/index.js`](https://github.com/JamesLMilner/worker-assemblyscript-template/blob/master/src/index.ts) calls the request handler in [`src/handler.ts`](https://github.com/JamesLMilner/worker-assemblyscript-template/blob/master/src/handler.ts), and will return the [request method](https://developer.mozilla.org/en-US/docs/Web/API/Request/method) for the given request.
 
 ### 🧪 Testing
 
@@ -30,12 +30,12 @@ For information on how to preview and publish your worker, please see the `wrang
 
 ## 🤢 Issues
 
-If you run into issues with this specific project, please feel free to file an issue [here](https://github.com/JamesMilnerUK/worker-assemblyscript-template/issues). If the problem is with `wrangler`, please file an issue [here](https://github.com/cloudflare/wrangler/issues).
+If you run into issues with this specific project, please feel free to file an issue [here](https://github.com/JamesLMilner/worker-assemblyscript-template/issues). If the problem is with `wrangler`, please file an issue [here](https://github.com/cloudflare/wrangler/issues).
 
 ## ⚠️ Caveats
 
 The `service-worker-mock` used by the tests is not a perfect representation of the Cloudflare Workers runtime. It is a general approximation. We recommend that you test with `wrangler preview` and in a staging environment to test things before deploying.
 
-## Acknowledgemetns
+## Acknowledgements
 
-This template is in turn based off of [https://github.com/EverlastingBugstopper/worker-typescript-template]()
+This template is in turn based off of the Cloudflare TypeScript template available [here](https://github.com/EverlastingBugstopper/worker-typescript-template).
