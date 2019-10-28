@@ -1,0 +1,41 @@
+{
+  "name": "worker-assemblyscript-template",
+  "version": "0.0.1",
+  "description": "Cloudflare worker AssemblyScript template",
+  "main": "index.js",
+  "scripts": {
+    "asbuild:untouched": "asc assembly/index.ts -b build/untouched.wasm -t build/untouched.wat --sourceMap --validate --debug",
+    "asbuild:optimized": "asc assembly/index.ts -b build/optimized.wasm -t build/optimized.wat --sourceMap --validate --optimize",
+    "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
+    "build": "npm run asbuild:optimized && shx cp build/optimized.wasm worker/module.wasm && webpack",
+    "dev": "NODE_ENV=development npm run build",
+    "format": "prettier --write '**/*.{ts,js,css,json,md}'",
+    "test:clean": "rm -rf ./transpiled/src ./transpiled/test",
+    "test": "npm run test:clean && npm run transpile && mocha --require source-map-support/register --recursive transpiled/test",
+    "transpile": "tsc --project ./test"
+  },
+  "author": "James <jamesmilner22@hotmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^1.0.1",
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "file-loader": "^4.2.0",
+    "mocha": "^6.1.4",
+    "prettier": "^1.18.2",
+    "service-worker-mock": "^2.0.3",
+    "source-map-loader": "^0.2.4",
+    "source-map-support": "^0.5.12",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.6",
+    "copy-webpack-plugin": "^5.0.4",
+    "sinon": "^7.4.2"
+  },
+  "dependencies": {
+    "assemblyscript": "git@github.com:AssemblyScript/assemblyscript.git",
+    "shx": "^0.3.2"
+  }
+}

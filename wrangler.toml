@@ -1,0 +1,8 @@
+name = "assemblyscript"
+type = "webpack"
+webpack_config = "webpack.config.js"
+zone_id = ""
+private = false
+account_id = "ae10dd550e0c312335c5be4e90775fd0"
+route = ""
+workers_dev = true
