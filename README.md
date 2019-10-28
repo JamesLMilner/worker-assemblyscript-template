@@ -1,6 +1,8 @@
 # worker-assemblyscript-template
 
-A batteries included template for kick starting a AssemblyScript Cloudflare worker project. The template is based on the TypeScript template, so uses TypeScript for the handler.
+A batteries included template for kick starting a [AssemblyScript](https://docs.assemblyscript.org/) Cloudflare worker project. The template is based on the TypeScript template, so uses TypeScript for the request handler.
+
+AssemblyScript compiles a strict subset of TypeScript (a typed superset of JavaScript) to WebAssembly using Binaryen.
 
 ## 🔋 Getting Started
 
@@ -15,6 +17,8 @@ wrangler generate my-asc-project https://github.com/JamesLMilner/worker-assembly
 ### 👩 💻 Developing
 
 [`src/index.js`](https://github.com/JamesLMilner/worker-assemblyscript-template/blob/master/src/index.ts) calls the request handler in [`src/handler.ts`](https://github.com/JamesLMilner/worker-assemblyscript-template/blob/master/src/handler.ts), and will return the [request method](https://developer.mozilla.org/en-US/docs/Web/API/Request/method) for the given request.
+
+For your AssemblyScript code you can edit `assembly/index.ts` and call `npm run asbuild` to see your changes. To build the whole worker you can do `npm run build`, which will build your TypeScript and AssemblyScript.
 
 ### 🧪 Testing
 
